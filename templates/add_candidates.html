@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Candidates</title>
+</head>
+<body>
+    <h1>Add Candidates to Election {{ election_id }}</h1>
+    <form action="{{ url_for('add_candidates', election_id=election_id, num_candidates=num_candidates) }}" method="post">
+        <!-- Add fields for each candidate -->
+        {% for i in range(num_candidates) %}
+        <h2>Candidate {{ i+1 }}</h2>
+        <label for="candidate_name_{{ i }}">Name:</label>
+        <input type="text" id="candidate_name_{{ i }}" name="candidate_name_{{ i }}" required><br>
+        <label for="candidate_description_{{ i }}">Description:</label>
+        <input type="text" id="candidate_description_{{ i }}" name="candidate_description_{{ i }}"><br>
+        <label for="candidate_image_url_{{ i }}">Image URL:</label>
+        <input type="text" id="candidate_image_url_{{ i }}" name="candidate_image_url_{{ i }}"><br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

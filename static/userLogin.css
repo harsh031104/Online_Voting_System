@@ -1,0 +1,108 @@
+/* Separate CSS file for login form styling */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+body {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background: #151515;
+  color: #c7c7c7;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login-container {
+  width: 500px;
+  padding: 40px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: inset 0 0 1px #272727;
+  background: #1b1b1b;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.field-label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+input {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  color: #868686;
+  padding: 0 15px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background: linear-gradient(#333, #222);
+}
+
+button {
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: linear-gradient(#333, #222);
+  color: #868686;
+}
+
+button:hover {
+  color: #339933;
+  box-shadow: 0 0 5px rgba(0, 255, 0, .3),
+    0 0 10px rgba(0, 255, 0, .2),
+    0 0 15px rgba(0, 255, 0, .1),
+    0 2px 0 black;
+}
+
+.flashes {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.flash-message {
+  animation: fadeOut 8s forwards;
+  margin-top: 10px;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+
+a {
+  color: #339933;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

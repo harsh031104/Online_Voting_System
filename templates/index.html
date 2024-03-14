@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+</head>
+<body>
+    <h1>Vote for a Candidate</h1>
+    <form action="/vote" method="post">
+        <select name="candidate">
+            {% for candidate in candidates %}
+                <option value="{{ candidate.id }}">{{ candidate.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Vote</button>
+    </form>
+</body>
+</html>

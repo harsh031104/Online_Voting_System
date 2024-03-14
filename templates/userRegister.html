@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='userRegister.css')}}">
+
+    <title>Register</title>
+
+    <!-- Add a style for hiding flash messages after a duration -->
+    <style>
+        .flash-message {
+            animation: fadeOut 8s forwards;
+            position: fixed;
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+            background: #1b1b1b;
+            padding: 10px;
+            border: 1px solid #272727;
+            border-radius: 5px;
+            color: #c7c7c7;
+            z-index: 999; /* Set a high z-index to ensure it's on top */
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+    </style>
+</head>
+<body>
+    <img id="uploadedImage" src="{{ url_for('static', filename='univotehub1.png') }}" alt="Uploaded Image">
+    <form action="{{ url_for('userRegister') }}" method="post">
+        <h1><u>Register</u></h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        
+        <label for="semester">Semester:</label>
+        <input type="number" id="semester" name="semester" required><br>
+        
+        <label for="student_id">Student ID:</label>
+        <input type="text" id="student_id" name="student_id" pattern="[0-9]{2}/[0-9]{5}" title="Please enter student ID in the format xx/xxxxx" required><br>
+
+        <!-- New buttons for sign in and sign up -->
+        <button type="submit">Register</button>
+        <!-- Added button for signing in -->
+        <p>Already have an account? <button class="link-button" type="button"><a href="{{ url_for('userLogin') }}">Login</a></button></p>
+    </form>
+
+    <!-- Display flash messages if they exist -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li class="flash-message">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+
+
+    <!-- Add JavaScript to hide flash messages after 4 seconds -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select all flash messages and hide them after 4 seconds
+            var flashMessages = document.querySelectorAll('.flash-message');
+            flashMessages.forEach(function (message) {
+                setTimeout(function () {
+                    message.style.display = 'none';
+                }, 4000); // Adjusted timeout to 4 seconds
+            });
+        });
+    </script>
+</body>
+</html>

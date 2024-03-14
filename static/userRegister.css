@@ -1,0 +1,134 @@
+/* Separate CSS file for registration form styling */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+#uploadedImage {
+  max-width: 300px;
+  max-height: 200px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #1b1b1b;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background-color:black;
+  color: #c7c7c7;
+}
+
+h1 {
+  position: fixed;
+  top:0
+}
+
+form {
+  width: 170px;
+  padding: 40px 35px 60px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: inset 0 0 1px #272727;
+  background: #1b1b1b;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  height: 40px;
+  width: calc(100% - 30px);
+  outline: none;
+  font-size: 16px;
+  color: #868686;
+  padding: 0 15px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background: linear-gradient(#333, #222);
+}
+
+input:focus {
+  color: #339933;
+  box-shadow: 0 0 5px rgba(0, 255, 0, .2),
+    inset 0 0 5px rgba(0, 255, 0, .1);
+  background: linear-gradient(#333933, #222922);
+}
+
+button {
+  height: 40px;
+  width: 30%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: linear-gradient(#333, #222);
+  color: #868686;
+}
+
+button:hover {
+  color: #339933;
+  box-shadow: 0 0 5px rgba(0, 255, 0, .3),
+    0 0 10px rgba(0, 255, 0, .2),
+    0 0 15px rgba(0, 255, 0, .1),
+    0 2px 0 black;
+}
+
+.link {
+  margin-top: 20px;
+  color: #868686;
+}
+
+.link a {
+  color: #339933;
+  text-decoration: none;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* Add media query for smaller screens if needed */
+@media (max-width: 600px) {
+  form {
+    width: 90%;
+  }
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font:bolder;
+  text-decoration: underline;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: linear-gradient(#333, #222);
+  color: #868686;
+}
+
+form {
+  width: 30%; /* Set the width of the form */
+  margin: 0 auto; /* Set the left and right margins to auto to center the form */
+}
+a {
+    color: #339933;
+    text-decoration: none;
+  }
+
+
+  
